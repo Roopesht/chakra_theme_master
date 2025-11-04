@@ -5,11 +5,12 @@ import {
   Divider,
   HStack,
   Box,
-  Text,
+  Text as Text1
 } from "@chakra-ui/react";
 import MotionWrapper from "./MotionWrapper";
 import CodeCopyBox from "./CodeCopyBox";
 import * as UIBlocks from "./UIBlocks";
+import * as UI from "./UI";
 import * as Chakra from "@chakra-ui/react";
 import { componentsToShow } from "../utils/componentRegistry";
 
@@ -17,11 +18,18 @@ import { componentsToShow } from "../utils/componentRegistry";
 import { Input } from "./UI//Input";
 import { Button } from "./UI//Button";
 import { Switch } from "./UI/Switch";
+import { Checkbox } from "./UI/Checkbox";
+import { Radio } from "./UI/Radio";
+import { Text } from "./UI/Text";
+/**/
 
 // ✅ Extend here as you add more custom components (Textarea, Select, etc.)
 const CUSTOM = {
   Input,
   Button,
+  Text,
+  Radio,
+  Checkbox
 };
 
 // ✅ Define your semantic variants
@@ -43,6 +51,7 @@ const VOID_COMPONENTS = ["Input", "Switch", "Checkbox", "Radio"];
 
 export default function UIShowcase() {
   return (
+
     <VStack align="stretch" spacing={8}>
       {componentsToShow.map((name) => {
         // Lookup order: Custom > Chakra > UIBlocks
