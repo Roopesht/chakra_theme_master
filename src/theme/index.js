@@ -4,7 +4,7 @@ import { forestTheme, sunriseTheme } from "./themeVariants";
 import { generateComponentVariants } from "./utils/generateComponentVariants";
 import * as componentStyles from "./components";
 
-const defaultTheme = "sunrise";
+const defaultTheme = "forest";
 const selected = defaultTheme === "sunrise" ? sunriseTheme : forestTheme;
 
 const components = Object.fromEntries(

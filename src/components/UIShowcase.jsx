@@ -13,6 +13,18 @@ import * as UIBlocks from "./UIBlocks";
 import * as Chakra from "@chakra-ui/react";
 import { componentsToShow } from "../utils/componentRegistry";
 
+// ✅ Import your custom variant-aware components
+import { Input } from "./UI//Input";
+import { Button } from "./UI//Button";
+import { Switch } from "./UI/Switch";
+
+// ✅ Extend here as you add more custom components (Textarea, Select, etc.)
+const CUSTOM = {
+  Input,
+  Button,
+};
+
+// ✅ Define your semantic variants
 const VARIANTS = [
   "accent",
   "important",
@@ -26,14 +38,15 @@ const VARIANTS = [
   "highlight",
 ];
 
-// Components that don't accept children
+// ✅ Components that don’t accept children
 const VOID_COMPONENTS = ["Input", "Switch", "Checkbox", "Radio"];
 
 export default function UIShowcase() {
   return (
     <VStack align="stretch" spacing={8}>
       {componentsToShow.map((name) => {
-        const Comp = Chakra[name] || UIBlocks[name];
+        // Lookup order: Custom > Chakra > UIBlocks
+        const Comp = CUSTOM[name] || Chakra[name] || UIBlocks[name];
         if (!Comp) return null;
 
         const supportsChildren = !VOID_COMPONENTS.includes(name);
@@ -44,7 +57,7 @@ export default function UIShowcase() {
               {name}
             </Heading>
 
-            {/* Render all variants */}
+            {/* Render all variants dynamically */}
             <HStack wrap="wrap" spacing={3} flexWrap="wrap">
               {VARIANTS.map((variant) => (
                 <Box key={variant} textAlign="center">
