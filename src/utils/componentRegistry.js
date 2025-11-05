@@ -10,5 +10,6 @@ export const componentsToShow = [
   "DashboardCards",
   "FormSection",
   "PopupBox",
+  "Box"
 
 ];
