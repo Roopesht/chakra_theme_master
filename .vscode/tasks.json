@@ -1,0 +1,20 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+
+    {
+      "label": "Run UI",
+      "type": "shell",
+      "command": "npm run dev",
+      "options": {
+        "cwd": "${workspaceFolder}/src"
+      },
+      "group": "build",
+      "presentation": {
+        "reveal": "always",
+        "panel": "new"
+      },
+      "problemMatcher": []
+    }
+  ]
+}

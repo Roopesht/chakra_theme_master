@@ -9,7 +9,7 @@ import {
 } from "@chakra-ui/react";
 import MotionWrapper from "./MotionWrapper";
 import CodeCopyBox from "./CodeCopyBox";
-import * as UIBlocks from "./UIBlocks";
+import * as Blocks from "./UI/Blocks";
 import * as UI from "./UI";
 import * as Chakra from "@chakra-ui/react";
 import { componentsToShow } from "../utils/componentRegistry";
@@ -54,8 +54,7 @@ export default function UIShowcase() {
 
     <VStack align="stretch" spacing={8}>
       {componentsToShow.map((name) => {
-        // Lookup order: Custom > Chakra > UIBlocks
-        const Comp = CUSTOM[name] || Chakra[name] || UIBlocks[name];
+        const Comp = CUSTOM[name] || Chakra[name] || Blocks[name];
         if (!Comp) return null;
 
         const supportsChildren = !VOID_COMPONENTS.includes(name);
@@ -89,6 +88,9 @@ export default function UIShowcase() {
           </MotionWrapper>
         );
       })}
+      <Blocks.PopupBox message="Welcome to UI Blocks" title="Big Title" >
+        <UI.Text>Some text</UI.Text>
+      </Blocks.PopupBox>
     </VStack>
   );
 }

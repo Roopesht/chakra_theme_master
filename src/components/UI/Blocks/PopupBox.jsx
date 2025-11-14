@@ -1,10 +1,11 @@
-import React from "react";
-import { Box, Button, Text, useTheme, useColorMode, Flex } from "@chakra-ui/react";
+import React, { Children } from "react";
+import { Box, Button, Text, useTheme, useColorMode, Flex, VStack } from "@chakra-ui/react";
 import { motion } from "framer-motion";
 
 const MotionBox = motion(Box);
 
-export default function PopupBox({ variant = "highlight", title = "Notification", message = "This is a popup notification example." }) {
+export default function PopupBox({ variant = "highlight", title = "Notification", message = "This is a popup notification example.", 
+  button1_text = "Dismiss",   button2_text = "Take Action", children }) {
   const theme = useTheme();
   const { colorMode } = useColorMode();
 
@@ -51,13 +52,17 @@ export default function PopupBox({ variant = "highlight", title = "Notification"
         <Text fontSize="sm" opacity={0.9}>
           {message}
         </Text>
+        <VStack>
+
+        {children}
+        </VStack>
 
         <Flex gap={3} mt={2}>
           <Button variant="important" size="sm">
-            Take Action
+            {button1_text}
           </Button>
           <Button variant="outline" size="sm">
-            Dismiss
+            {button2_text}
           </Button>
         </Flex>
       </Flex>

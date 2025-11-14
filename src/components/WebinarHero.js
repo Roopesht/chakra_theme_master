@@ -7,9 +7,9 @@ import {
   Avatar,
 
 } from '@chakra-ui/react';
-import {Text} from '../UI/Text';
-import {Badge} from '../UI/Badge';
-import {Box} from '../UI/Box';
+import {Text} from './UI/Text';
+import {Badge} from './UI/Badge';
+import {Box} from './UI/Box';
 import { motion } from 'framer-motion';
 
 const MotionBox = motion(Box);
