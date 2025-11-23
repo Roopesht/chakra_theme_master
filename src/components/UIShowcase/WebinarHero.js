@@ -5,26 +5,25 @@ import {
   HStack,
   VStack,
   Avatar,
-
 } from '@chakra-ui/react';
-import {Text} from './UI/Text';
-import {Badge} from './UI/Badge';
-import {Box} from './UI/Box';
+import {Text} from '../UI/Text';
+import {TextBG} from '../UI/TextBG';
+import {Badge} from '../UI/Badge';
+import {Box} from '../UI/Box';
 import { motion } from 'framer-motion';
+import { chakra } from '@chakra-ui/react';
 
-const MotionBox = motion(Box);
-const MotionHeading = motion(Heading);
-const MotionText = motion(Text);
+
+const MotionBox = chakra(motion.div);
+const MotionHeading = chakra(motion.h1);
+const MotionText = chakra(motion.p);
 
 const WebinarHero = () => {
-  const nextWebinarDate = "2008-01-01";
-
-  // Safety check
-  
+  const nextWebinarDate = "2008-01-01"; 
 
   return (
-    <Box variant="highlight"
-      py={{ base: 16, md: 24 }}
+    <Box variant="highlight" 
+      py={{ base: 16, md: 24 }} 
     >
       <Container maxW="container.xl">
         <MotionBox
@@ -34,7 +33,7 @@ const WebinarHero = () => {
           transition={{ duration: 0.8 }}
         >
           <Badge
-            variant='success'
+            variant='danger' 
             
             borderRadius="full"
             fontSize="sm"
@@ -83,7 +82,7 @@ const WebinarHero = () => {
             </HStack>
             <HStack>
             
-              <Text fontSize="lg"  variant='highlight'>45-60 Minutes</Text>
+              <TextBG fontSize="lg"  variant='success'>45-60 Minutes</TextBG>
             </HStack>
           </HStack>
 
@@ -92,10 +91,11 @@ const WebinarHero = () => {
             animate={{ y: 0, opacity: 1 }}
             transition={{ delay: 0.8, duration: 0.6 }}
           >
-            <VStack spacing={3}>
+            <VStack spacing={1}>
               <Avatar
                 size="xl"
                 name="Roopesh"
+
               />
               <VStack spacing={1}>
                 <Text fontWeight="600" fontSize="lg" >

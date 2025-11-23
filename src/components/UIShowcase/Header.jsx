@@ -9,7 +9,7 @@ export default function Header({ themeName, setThemeName }) {
     <Flex mb={4} align="center">
       <Select w="200px" value={themeName} onChange={(e) => setThemeName(e.target.value)}>
         <option value="forest">Forest</option>
-        <option value="sunrise">Sunrise</option>
+        <option value="sunrise">Sunrise</option> 
       </Select>
       <Spacer />
       <IconButton

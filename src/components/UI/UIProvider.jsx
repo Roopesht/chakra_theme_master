@@ -2,10 +2,10 @@ import React, { useState, useMemo, createContext, useContext } from "react";
 import { ChakraProvider, ColorModeScript, extendTheme } from "@chakra-ui/react";
 import { AnimatePresence } from "framer-motion";
 
-import { forestTheme, sunriseTheme } from "../theme/themeVariants";
-import { generateComponentVariants } from "../theme/utils/generateComponentVariants";
-import * as componentStyles from "../theme/components";
-import typography from "../theme/typography";
+import { forestTheme, sunriseTheme } from "../../theme/themeVariants";
+import { generateComponentVariants } from "../../theme/utils/generateComponentVariants";
+import * as componentStyles from "../../theme/components";
+import typography from "../../theme/typography";
 
 // Context to hold current brand theme name
 const BrandThemeContext = createContext();

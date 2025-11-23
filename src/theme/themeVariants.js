@@ -19,7 +19,7 @@ export const forestTheme = {
       info: { light: "#63B3ED", dark: "#2B6CB0", textLight: "#1A202C", textDark: "#EBF8FF" },
       warning: { light: "#ED8936", dark: "#9C4221", textLight: "#1A202C", textDark: "#FFF5EB" },
       danger: { light: "#E53E3E", dark: "#742A2A", textLight: "#FFF5F5", textDark: "#FFF5F5" },
-      muted: { light: "#F7FAFC", dark: "#2D3748", textLight: "#2D3748", textDark: "#EDF2F7" },
+      muted: { light: "#769db7ff", dark: "#2D3748", textLight: "#2D3748", textDark: "#EDF2F7" },
       neutral: { light: "#E2E8F0", dark: "#1A202C", textLight: "#1A202C", textDark: "#E2E8F0" },
       outline: { light: "#CBD5E0", dark: "#4A5568", textLight: "#1A202C", textDark: "#EDF2F7" },
       highlight: { light: "#B2F5EA", dark: "#234E52", textLight: "#1A202C", textDark: "#E6FFFA" },

@@ -18,7 +18,9 @@ export function Checkbox({ variant = "accent", children, ...props }) {
       _checked={{
         bg: checkedColor,
         borderColor: checkedColor,
+        fill: checkedColor,
         color: v?.[`text${colorMode === "dark" ? "Dark" : "Light"}`] || "white",
+        
       }}
       _focus={{
         boxShadow: `0 0 0 1px ${checkedColor}`,

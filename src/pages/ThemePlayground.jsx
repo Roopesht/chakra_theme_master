@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Box, Container } from "@chakra-ui/react";
-import Header from "../components/Header";
-import UIShowcase from "../components/UIShowcase";
+import Header from "../components/UIShowcase/Header";
+import UIShowcase from "../components/UIShowcase/UIShowcase";
 
 export default function ThemePlayground() {
   const [themeName, setThemeName] = useState("forest");

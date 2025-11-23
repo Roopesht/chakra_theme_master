@@ -1,9 +1,9 @@
 import React from "react";
 import { Button, VStack } from "@chakra-ui/react";
-import { UIProvider, useBrandTheme } from "./components/UIProvider";
+import { UIProvider, useBrandTheme } from "./components/UI/UIProvider";
 import ThemePlayground from "./pages/ThemePlayground";
-import Test1 from "./pages/Test1";
-//import {UIProvider} from "@/components/UIProvider";
+import Showcase from "./components/UIShowcase/Showcase";
+
 
 function ThemeToggle() {
   const { themeName, setThemeName } = useBrandTheme();
@@ -26,8 +26,10 @@ export default function App() {
     <UIProvider>
       <VStack p={6} spacing={6}>
         <ThemeToggle />
-        <Test1 ></Test1>
+        <Showcase />
+        {/*
         <ThemePlayground />
+        */}
       </VStack>
     </UIProvider>
   );

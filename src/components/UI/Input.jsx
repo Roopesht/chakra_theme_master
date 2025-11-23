@@ -10,6 +10,7 @@ export function Input({ variant = "accent", ...props }) {
 
   // fallback logic if the variant doesn’t exist
   const borderColor = v?.[colorMode] || theme.colors.brand[400];
+
   const focusColor = v?.[colorMode] || theme.colors.brand[500];
   const textColor =
     v?.[`text${colorMode === "dark" ? "Dark" : "Light"}`] ||
@@ -19,7 +20,7 @@ export function Input({ variant = "accent", ...props }) {
     <ChakraInput
       size="md"
       borderColor={borderColor}
-      color={textColor}
+      color={borderColor}
       focusBorderColor={focusColor}
       _hover={{ borderColor: focusColor }}
       _placeholder={{ color: textColor, opacity: 0.6 }}

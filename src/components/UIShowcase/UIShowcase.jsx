@@ -9,18 +9,20 @@ import {
 } from "@chakra-ui/react";
 import MotionWrapper from "./MotionWrapper";
 import CodeCopyBox from "./CodeCopyBox";
-import * as Blocks from "./UI/Blocks";
-import * as UI from "./UI";
+import * as Blocks from "../UI/Blocks";
+import * as UI from "../UI";
 import * as Chakra from "@chakra-ui/react";
-import { componentsToShow } from "../utils/componentRegistry";
+import { componentsToShow } from "../../utils/componentRegistry";
 
 // ✅ Import your custom variant-aware components
-import { Input } from "./UI//Input";
-import { Button } from "./UI//Button";
-import { Switch } from "./UI/Switch";
-import { Checkbox } from "./UI/Checkbox";
-import { Radio } from "./UI/Radio";
-import { Text } from "./UI/Text";
+import { Input } from "../UI/Input";
+import { Button } from "../UI/Button";
+import { Switch } from "../UI/Switch";
+import { Checkbox } from "../UI/Checkbox";
+import { Radio } from "../UI/Radio";
+import { Text} from "../UI/Text";
+import { TextBG } from "../UI/TextBG";
+
 /**/
 
 // ✅ Extend here as you add more custom components (Textarea, Select, etc.)
@@ -28,6 +30,7 @@ const CUSTOM = {
   Input,
   Button,
   Text,
+  TextBG,
   Radio,
   Checkbox
 };
@@ -74,9 +77,9 @@ export default function UIShowcase() {
                   ) : (
                     <Comp variant={variant} placeholder={variant} />
                   )}
-                  <Text fontSize="xs" color="gray.500" mt={1}>
+                  <Text1 fontSize="xs" color="gray.500" mt={1}>
                     {variant}
-                  </Text>
+                  </Text1>
                 </Box>
               ))}
             </HStack>

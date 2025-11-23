@@ -1,5 +1,6 @@
 export const componentsToShow = [
   "Text",
+  "TextBG",
   "Checkbox",
   "Radio",
   "Button",
@@ -10,6 +11,6 @@ export const componentsToShow = [
   "DashboardCards",
   "FormSection",
   "PopupBox",
-  "Box"
+  "Box",
 
 ];
