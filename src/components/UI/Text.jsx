@@ -1,4 +1,4 @@
-// src/components/Text.jsx
+// src/components/UI/Text.jsx
 import React from "react";
 import { Text as ChakraText, useTheme, useColorMode } from "@chakra-ui/react";
 

@@ -5,7 +5,7 @@
     {
       "label": "Run UI",
       "type": "shell",
-      "command": "npm run dev",
+      "command": "npm start",
       "options": {
         "cwd": "${workspaceFolder}/src"
       },
