@@ -1,6 +1,6 @@
 import { extendTheme } from "@chakra-ui/react";
 import typography from "./typography";
-import { forestTheme, sunriseTheme } from "./themeVariants";
+import { forestTheme, sunriseTheme, auroraTheme } from "./themeVariants";
 import { generateComponentVariants } from "./utils/generateComponentVariants";
 import * as componentStyles from "./components";
 
