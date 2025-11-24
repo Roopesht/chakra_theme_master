@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Box, Container, Tabs, TabList, TabPanels, Tab, TabPanel } from "@chakra-ui/react";
 import Header from "./Header";
-import WebinarHero from "./WebinarHero";
+import WebinarHero from "./custom/WebinarHero";
 import UIShowcase from "./UIShowcase";
 
 export default function Showcase() {

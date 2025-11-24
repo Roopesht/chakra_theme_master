@@ -6,10 +6,10 @@ import {
   VStack,
   Avatar,
 } from '@chakra-ui/react';
-import {Text} from '../UI/Text';
-import {TextBG} from '../UI/TextBG';
-import {Badge} from '../UI/Badge';
-import {Box} from '../UI/Box';
+import {Text} from '../../UI/Text';
+import {TextBG} from '../../UI/TextBG';
+import {Badge} from '../../UI/Badge';
+import {Box} from '../../UI/Box';
 import { motion } from 'framer-motion';
 import { chakra } from '@chakra-ui/react';
 

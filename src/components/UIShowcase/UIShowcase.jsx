@@ -7,7 +7,7 @@ import {
   Box,
   Text as Text1
 } from "@chakra-ui/react";
-import MotionWrapper from "./MotionWrapper";
+import MotionWrapper from "../UI/MotionWrapper";
 import CodeCopyBox from "./CodeCopyBox";
 import * as Blocks from "../UI/Blocks";
 import * as UI from "../UI";
@@ -20,7 +20,7 @@ import { Button } from "../UI/Button";
 import { Switch } from "../UI/Switch";
 import { Checkbox } from "../UI/Checkbox";
 import { Radio } from "../UI/Radio";
-import { Text} from "../UI/Text";
+import { Text } from "../UI/Text";
 import { TextBG } from "../UI/TextBG";
 
 /**/
@@ -63,7 +63,7 @@ export default function UIShowcase() {
         const supportsChildren = !VOID_COMPONENTS.includes(name);
 
         return (
-          <MotionWrapper key={name}>
+          <MotionWrapper key={name} >
             <Heading size="md" mb={3}>
               {name}
             </Heading>
