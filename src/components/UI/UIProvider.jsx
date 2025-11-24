@@ -2,7 +2,7 @@ import React, { useState, useMemo, createContext, useContext } from "react";
 import { ChakraProvider, ColorModeScript, extendTheme } from "@chakra-ui/react";
 import { AnimatePresence } from "framer-motion";
 
-import { forestTheme, sunriseTheme } from "../../theme/themeVariants";
+import { forestTheme, sunriseTheme, auroraTheme } from "../../theme/themeVariants";
 import { generateComponentVariants } from "../../theme/utils/generateComponentVariants";
 import * as componentStyles from "../../theme/components";
 import typography from "../../theme/typography";
@@ -18,7 +18,8 @@ export function UIProvider({ children, initialTheme = "forest" }) {
   const [themeName, setThemeName] = useState(initialTheme);
 
   const themeObject = useMemo(() => {
-    const selected = themeName === "sunrise" ? sunriseTheme : forestTheme;
+    const dictThemes = { forest: forestTheme, sunrise: sunriseTheme, aurora: auroraTheme };
+    const selected = dictThemes[themeName] || auroraTheme;
 
     const components = Object.fromEntries(
       Object.entries(componentStyles).map(([name, config]) => [

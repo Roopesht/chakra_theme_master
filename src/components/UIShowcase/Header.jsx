@@ -17,6 +17,7 @@ export default function Header() {
       >
         <option value="forest">Forest</option>
         <option value="sunrise">Sunrise</option>
+        <option value="aurora">Aurora</option>
       </Select>
 
       <Spacer />

@@ -22,7 +22,7 @@ const WebinarHero = () => {
   const nextWebinarDate = "2008-01-01"; 
 
   return (
-    <Box variant="highlight" 
+    <Box 
       py={{ base: 16, md: 24 }} 
     >
       <Container maxW="container.xl">
@@ -33,7 +33,7 @@ const WebinarHero = () => {
           transition={{ duration: 0.8 }}
         >
           <Badge
-            variant='danger' 
+            variant='important' 
             
             borderRadius="full"
             fontSize="sm"

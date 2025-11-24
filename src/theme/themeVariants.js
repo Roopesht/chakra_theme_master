@@ -45,3 +45,97 @@ export const sunriseTheme = {
   },
   bg: { canvas: "gray.50", surface: "white" }
 };
+
+export const auroraTheme = {
+  colors: {
+    brand: {
+      50: "#E8F0FF",
+      100: "#D1E1FF",
+      200: "#A6C3FF",
+      300: "#7AA4FF",
+      400: "#5086FF",
+      500: "#1D4ED8", // primary blue
+      600: "#153FAF",
+      700: "#0E2F82",
+      800: "#081E55",
+      900: "#04122E",
+    },
+    variants: {
+      accent: {
+        // primary CTA color
+        light: "#1D4ED8",      // blue
+        dark: "#0E2F82",
+        textLight: "#F9FAFB",
+        textDark: "#E5E7EB",
+      },
+      important: {
+        // gold for "premium / key info"
+        light: "#FACC15",      // gold
+        dark: "#A16207",
+        textLight: "#1F2933",
+        textDark: "#FFFBE6",
+      },
+      success: {
+        // green for success
+        light: "#22C55E",
+        dark: "#166534",
+        textLight: "#F0FFF4",
+        textDark: "#DCFCE7",
+      },
+      info: {
+        // informational blue
+        light: "#60A5FA",
+        dark: "#1E40AF",
+        textLight: "#0F172A",
+        textDark: "#DBEAFE",
+      },
+      warning: {
+        // **not gold** – more alert/amber
+        light: "#FB923C",      // amber / orange
+        dark: "#C2410C",
+        textLight: "#1F2933",
+        textDark: "#FFF7ED",
+      },
+      danger: {
+        light: "#EF4444",
+        dark: "#7F1D1D",
+        textLight: "#FFF5F5",
+        textDark: "#FEE2E2",
+      },
+      muted: {
+        // silver-ish neutrals
+        light: "#E2E8F0",      // silver
+        dark: "#4B5563",
+        textLight: "#4B5563",
+        textDark: "#E5E7EB",
+      },
+      neutral: {
+        light: "#F9FAFB",
+        dark: "#111827",
+        textLight: "#111827",
+        textDark: "#E5E7EB",
+      },
+      outline: {
+        light: "#CBD5E1",
+        dark: "#475569",
+        textLight: "#111827",
+        textDark: "#E5E7EB",
+      },
+      highlight: {
+        // gold for subtle highlights / tags
+        light: "#FEF3C7",
+        dark: "#92400E",
+        textLight: "#78350F",
+        textDark: "#FFFBEB",
+      },
+    },
+  },
+  bg: {
+    canvas: "#F9FAFB",
+    surface: "#FFFFFF",
+  },
+  fonts: {
+    heading: "'Merriweather', serif",
+    body: "'Inter', sans-serif",
+  },
+};

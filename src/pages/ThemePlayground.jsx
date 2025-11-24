@@ -4,7 +4,7 @@ import Header from "../components/UIShowcase/Header";
 import UIShowcase from "../components/UIShowcase/UIShowcase";
 
 export default function ThemePlayground() {
-  const [themeName, setThemeName] = useState("forest");
+  const [themeName, setThemeName] = useState("aurora");
 
   return (
     <Container maxW="6xl">
