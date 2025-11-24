@@ -1,11 +1,21 @@
-import React, { Children } from "react";
-import { Box, Button, Text, useTheme, useColorMode, Flex, VStack } from "@chakra-ui/react";
+// src/components/UI/Blocks/PopupBox.jsx
+import React from "react";
+import { 
+  Box, Button, Text, Flex, VStack, useTheme, useColorMode 
+} from "@chakra-ui/react";
 import { motion } from "framer-motion";
 
 const MotionBox = motion(Box);
 
-export default function PopupBox({ variant = "highlight", title = "Notification", message = "This is a popup notification example.", 
-  button1_text = "Dismiss",   button2_text = "Take Action", children }) {
+export default function PopupBox({ 
+  variant = "highlight",
+  title = "Notification",
+  message = "This is a popup notification example.",
+  primaryAction = { text: "Take Action", onClick: () => {} },
+  secondaryAction = { text: "Dismiss", onClick: () => {} },
+  children,
+  showAccentBar = true
+}) {
   const theme = useTheme();
   const { colorMode } = useColorMode();
 
@@ -37,32 +47,44 @@ export default function PopupBox({ variant = "highlight", title = "Notification"
       transition={{ duration: 0.25, ease: "easeOut" }}
     >
       {/* Accent bar */}
-      <Box
-        position="absolute"
-        top={0}
-        left={0}
-        w="100%"
-        h="4px"
-        bg={accent}
-        borderTopRadius="md"
-      />
+      {showAccentBar && (
+        <Box
+          position="absolute"
+          top={0}
+          left={0}
+          w="100%"
+          h="4px"
+          bg={accent}
+          borderTopRadius="md"
+        />
+      )}
 
-      <Flex direction="column" gap={3} mt={2}>
+      <Flex direction="column" gap={3} mt={showAccentBar ? 2 : 0}>
         <Text fontWeight="semibold">{title}</Text>
         <Text fontSize="sm" opacity={0.9}>
           {message}
         </Text>
-        <VStack>
-
-        {children}
-        </VStack>
+        
+        {children && (
+          <VStack align="stretch" spacing={2}>
+            {children}
+          </VStack>
+        )}
 
         <Flex gap={3} mt={2}>
-          <Button variant="important" size="sm">
-            {button1_text}
+          <Button 
+            variant="important" 
+            size="sm"
+            onClick={primaryAction.onClick}
+          >
+            {primaryAction.text}
           </Button>
-          <Button variant="outline" size="sm">
-            {button2_text}
+          <Button 
+            variant="outline" 
+            size="sm"
+            onClick={secondaryAction.onClick}
+          >
+            {secondaryAction.text}
           </Button>
         </Flex>
       </Flex>

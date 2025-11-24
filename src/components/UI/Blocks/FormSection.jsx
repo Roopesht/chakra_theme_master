@@ -1,31 +1,33 @@
+// src/components/UI/Blocks/FormSection.jsx
 import React from "react";
 import {
   Box,
-  FormControl,
-  FormLabel,
-  Input,
-  Button,
   VStack,
   useTheme,
   useColorMode,
   Divider,
   Heading,
+  Button
 } from "@chakra-ui/react";
-import { motion } from "framer-motion";
 
-const MotionBox = motion(Box);
-
-export default function FormSection({ variant = "muted" }) {
+export default function FormSection({ 
+  variant = "muted",
+  title = "Form Section",
+  children,
+  onSubmit,
+  submitText = "Submit",
+  showSubmitButton = true
+}) {
   const theme = useTheme();
   const { colorMode } = useColorMode();
+  const accent = theme.colors.brand[500];
   const v = theme.colors.variants[variant];
   const bg = v?.[colorMode];
   const text = v?.[`text${colorMode === "dark" ? "Dark" : "Light"}`];
-  const accent = theme.colors.brand[500];
   const border = colorMode === "dark" ? "whiteAlpha.200" : "blackAlpha.100";
 
   return (
-    <MotionBox
+    <Box
       p={6}
       borderRadius="md"
       bg={bg}
@@ -35,26 +37,32 @@ export default function FormSection({ variant = "muted" }) {
       boxShadow={
         colorMode === "dark" ? "0 2px 10px rgba(0,0,0,0.5)" : "0 2px 8px rgba(0,0,0,0.08)"
       }
-      whileHover={{ scale: 1.01 }}
-      transition={{ duration: 0.15 }}
+      _hover={{ transform: "scale(1.01)" }}
+      transition="all 0.15s ease"
     >
-      <VStack align="stretch" spacing={4}>
+      <VStack 
+        as={onSubmit ? "form" : "div"} 
+        onSubmit={onSubmit}
+        align="stretch" 
+        spacing={4}
+      >
         <Heading size="sm" color={accent}>
-          Contact Details
+          {title}
         </Heading>
         <Divider />
-        <FormControl>
-          <FormLabel>Name</FormLabel>
-          <Input placeholder="Enter name" />
-        </FormControl>
-        <FormControl>
-          <FormLabel>Email</FormLabel>
-          <Input placeholder="name@company.com" />
-        </FormControl>
-        <Button variant="accent" alignSelf="flex-start">
-          Submit
-        </Button>
+        
+        {children}
+        
+        {showSubmitButton && (
+          <Button 
+            variant="accent" 
+            alignSelf="flex-start" 
+            type={onSubmit ? "submit" : "button"}
+          >
+            {submitText}
+          </Button>
+        )}
       </VStack>
-    </MotionBox>
+    </Box>
   );
 }

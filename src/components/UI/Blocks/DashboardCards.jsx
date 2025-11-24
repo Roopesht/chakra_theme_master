@@ -1,3 +1,4 @@
+// src/components/UI/Blocks/DashboardCards.jsx
 import React from "react";
 import {
   SimpleGrid,
@@ -11,7 +12,11 @@ import { motion } from "framer-motion";
 
 const MotionBox = motion(Box);
 
-export default function DashboardCards({ variant = "neutral" }) {
+export default function DashboardCards({ 
+  variant = "neutral",
+  metrics = [],
+  columns = { base: 1, md: 3 }
+}) {
   const theme = useTheme();
   const { colorMode } = useColorMode();
   const v = theme.colors.variants[variant];
@@ -20,9 +25,17 @@ export default function DashboardCards({ variant = "neutral" }) {
   const border = colorMode === "dark" ? "whiteAlpha.200" : "blackAlpha.100";
   const accent = theme.colors.brand[500];
 
+  const defaultMetrics = [
+    { title: "Metric 1", value: "1,234", description: "Quick summary" },
+    { title: "Metric 2", value: "1,234", description: "Quick summary" },
+    { title: "Metric 3", value: "1,234", description: "Quick summary" },
+  ];
+
+  const data = metrics.length > 0 ? metrics : defaultMetrics;
+
   return (
-    <SimpleGrid columns={{ base: 1, md: 3 }} spacing={4}>
-      {[1, 2, 3].map((i) => (
+    <SimpleGrid columns={columns} spacing={4}>
+      {data.map((metric, i) => (
         <MotionBox
           key={i}
           p={5}
@@ -46,14 +59,14 @@ export default function DashboardCards({ variant = "neutral" }) {
             top: 0,
           }}
           position="relative"
-          whileHover={{ y: -3, boxShadow: "0 6px 12px rgba(0,0,0,0.1)" }}
+          whileHover={{ y: -3 }}
           transition={{ duration: 0.15 }}
         >
           <Heading size="sm" mb={2}>
-            Metric {i}
+            {metric.title}
           </Heading>
           <Text fontSize="sm" opacity={0.85}>
-            Quick summary of key performance metric.
+            {metric.description}
           </Text>
         </MotionBox>
       ))}

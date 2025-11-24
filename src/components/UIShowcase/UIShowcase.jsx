@@ -106,9 +106,6 @@ export default function UIShowcase() {
           </MotionWrapper>
         );
       })}
-      <Blocks.PopupBox message="Welcome to UI Blocks" title="Big Title" >
-        <UI.Text>Some text</UI.Text>
-      </Blocks.PopupBox>
     </VStack>
   );
 }
