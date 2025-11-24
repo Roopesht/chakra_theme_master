@@ -1,15 +1,14 @@
 import React from "react";
-import { Flex, Select, Spacer, IconButton, useColorMode } from "@chakra-ui/react";
+import { Flex, Select, Spacer, IconButton, useColorMode, Button } from "@chakra-ui/react";
 import { SunIcon, MoonIcon } from "@chakra-ui/icons";
 import { UIProvider, useBrandTheme } from "../UI/UIProvider";
 
-
-export default function Header() {
+export default function Header({ onShowCustom, showBackButton, onShowMain }) {
   const { themeName, setThemeName } = useBrandTheme();
   const { colorMode, toggleColorMode } = useColorMode();
 
   return (
-    <Flex mb={4} align="center">
+    <Flex mb={4} align="center" gap={4}>
       <Select
         w="200px"
         value={themeName}
@@ -21,6 +20,16 @@ export default function Header() {
       </Select>
 
       <Spacer />
+
+      {showBackButton ? (
+        <Button onClick={onShowMain} size="sm">
+          ← Back to Main
+        </Button>
+      ) : (
+        <Button onClick={onShowCustom} size="sm">
+          Custom Showcase
+        </Button>
+      )}
 
       <IconButton
         size="sm"
