@@ -4,8 +4,9 @@ import { forestTheme, sunriseTheme, auroraTheme } from "./themeVariants";
 import { generateComponentVariants } from "./utils/generateComponentVariants";
 import * as componentStyles from "./components";
 
-const defaultTheme = "forest";
-const selected = defaultTheme === "sunrise" ? sunriseTheme : forestTheme;
+const themeName = "aurora";
+const dictThemes = { forest: forestTheme, sunrise: sunriseTheme, aurora: auroraTheme };
+const selected = dictThemes[themeName] || auroraTheme;
 
 const components = Object.fromEntries(
   Object.entries(componentStyles).map(([name, config]) => [

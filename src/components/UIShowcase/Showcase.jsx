@@ -5,7 +5,7 @@ import UIShowcase from "./UIShowcase";
 import CustomShowcase from "./custom/CustomShowcase";
 
 export default function Showcase() {
-  const [themeName, setThemeName] = useState("forest");
+  const [themeName, setThemeName] = useState("aurora");
   const [currentView, setCurrentView] = useState("main"); // "main" or "custom"
 
   const handleShowCustom = () => setCurrentView("custom");

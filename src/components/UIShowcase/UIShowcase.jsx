@@ -12,7 +12,6 @@ import CodeCopyBox from "./CodeCopyBox";
 import * as Blocks from "../UI/Blocks";
 import * as UI from "../UI";
 import * as Chakra from "@chakra-ui/react";
-import { componentsToShow } from "../../utils/componentRegistry";
 
 // ✅ Import your custom variant-aware components
 import { Input } from "../UI/Input";
@@ -24,6 +23,22 @@ import { Text } from "../UI/Text";
 import { TextBG } from "../UI/TextBG";
 
 /**/
+
+const componentsToShow = [
+  "Text",
+  "TextBG",
+  "Checkbox",
+  "Radio",
+  "Button",
+  "Alert",
+  "Input",
+  "Switch",
+  "ConfirmationBox",
+  "DashboardCards",
+  "FormSection",
+  "PopupBox",
+  "Box",
+];
 
 // ✅ Extend here as you add more custom components (Textarea, Select, etc.)
 const CUSTOM = {

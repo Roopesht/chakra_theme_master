@@ -14,7 +14,7 @@ export function useBrandTheme() {
   return useContext(BrandThemeContext);
 }
 
-export function UIProvider({ children, initialTheme = "forest" }) {
+export function UIProvider({ children, initialTheme = "aurora" }) {
   const [themeName, setThemeName] = useState(initialTheme);
 
   const themeObject = useMemo(() => {
