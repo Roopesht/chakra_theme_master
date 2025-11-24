@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Box, Container } from "@chakra-ui/react";
-import Header from "../components/UIShowcase/Header";
-import UIShowcase from "../components/UIShowcase/UIShowcase";
+import Header from "../Header";
+import UIShowcase from "../UIShowcase";
 
 export default function ThemePlayground() {
   const [themeName, setThemeName] = useState("aurora");
